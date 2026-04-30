@@ -8,7 +8,8 @@ public class Main {
         CounterYears(1992);
         System.out.println();
         System.out.println("Задание 2");
-        deviceYear(2015);
+        deviceYear(1,2026);
+        System.out.println();
         System.out.println("Задание 3");
         calculateDeliveryDays(95);
     }
@@ -24,24 +25,16 @@ public class Main {
     }
 
 
-    public static void deviceYear(int clientDeviceYear, int clientOS) {
-        int currentYear = LocalDate.now().getYear();
-        if (clientDeviceYear < 2015) {
-            if (clientDeviceYear < currentYear && clientOS == 1) { // 1 = Android
-                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
-                return;
-            }
-            if (clientDeviceYear < currentYear && clientOS == 0) { // 0 = IOS
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-                return;
-            }
-            if (clientDeviceYear >= currentYear && clientOS == 1) {
-                System.out.println("Установите версию для Android по ссылке.");
-                return;
-            }
-            if (clientDeviceYear >= currentYear && clientOS == 0) {
-                System.out.println("Установите версию для IOS по ссылке.");
-            }
+    public static void deviceYear(int clientOs, int clientDeviceYear) {
+        if (clientOs == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для системы iOS по ссылке");
+        } else if (clientOs == 0) {
+            System.out.println("Установите приложение для системы iOS по ссылке");
+        }
+        if (clientOs == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для системы Android по ссылке");
+        } else if (clientOs == 1) {
+            System.out.println("Установите приложение для системы Android по ссылке");
         }
     }
 
