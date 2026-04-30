@@ -8,7 +8,7 @@ public class Main {
         CounterYears(1992);
         System.out.println();
         System.out.println("Задание 2");
-        deviceYear(currentYear,clientOS 1);
+        deviceYear(2026,0);
         System.out.println("Задание 3");
         calculateDeliveryDays(95);
     }
